@@ -1,0 +1,13 @@
+import "Speech.idsl";
+
+Component app_tts
+{
+    Communications
+    {
+        requires Speech;
+    };
+    language python;
+    gui Qt(QWidget);
+    options dsr;
+};
+

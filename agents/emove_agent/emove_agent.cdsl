@@ -1,0 +1,13 @@
+import "EmotionalMotor.idsl";
+import "DifferentialRobot.idsl";
+
+Component emove_agent
+{
+    Communications
+    {
+        requires EmotionalMotor,DifferentialRobot;
+    };
+    language python;
+    options dsr;
+};
+

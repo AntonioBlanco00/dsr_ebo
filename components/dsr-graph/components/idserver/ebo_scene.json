@@ -1,0 +1,255 @@
+{
+    "DSRModel": {
+        "symbols": {
+            "100": {
+                "attribute": {
+                    "color": {
+                        "type": 0,
+                        "value": "SeaGreen"
+                    },
+                    "level": {
+                        "type": 1,
+                        "value": 0
+                    },
+                    "pos_x": {
+                        "type": 2,
+                        "value": -93.65638
+                    },
+                    "pos_y": {
+                        "type": 2,
+                        "value": -221.573959
+                    }
+                },
+                "id": "100",
+                "links": [
+                    {
+                        "dst": "200",
+                        "label": "RT",
+                        "linkAttribute": {
+                            "rt_rotation_euler_xyz": {
+                                "type": 3,
+                                "value": [
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            },
+                            "rt_translation": {
+                                "type": 3,
+                                "value": [
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        },
+                        "src": "100"
+                    },
+                    {
+                        "dst": "180366997815558145",
+                        "label": "has",
+                        "linkAttribute": {
+                        },
+                        "src": "100"
+                    }
+                ],
+                "name": "root",
+                "type": "root"
+            },
+            "180366997815558145": {
+                "attribute": {
+                    "agent_description": {
+                        "type": 0,
+                        "value": "TODO"
+                    },
+                    "agent_id": {
+                        "type": 6,
+                        "value": 1
+                    },
+                    "agent_name": {
+                        "type": 0,
+                        "value": "Participant_1 ( idserver )"
+                    },
+                    "cpu_usage": {
+                        "type": 2,
+                        "value": 6
+                    },
+                    "memory_usage": {
+                        "type": 6,
+                        "value": 187948
+                    },
+                    "num_procs": {
+                        "type": 6,
+                        "value": 33
+                    },
+                    "parent": {
+                        "type": 7,
+                        "value": "100"
+                    },
+                    "pos_x": {
+                        "type": 2,
+                        "value": 141.647461
+                    },
+                    "pos_y": {
+                        "type": 2,
+                        "value": -231.724915
+                    },
+                    "timestamp_agent": {
+                        "type": 7,
+                        "value": "1716966370964628845"
+                    },
+                    "timestamp_alivetime": {
+                        "type": 7,
+                        "value": "62"
+                    },
+                    "timestamp_creation": {
+                        "type": 7,
+                        "value": "1716966308341393107"
+                    }
+                },
+                "id": "180366997815558145",
+                "links": [
+                ],
+                "name": "Participant_1 ( idserver )",
+                "type": "agent"
+            },
+            "180367038282203145": {
+                "attribute": {
+                    "Emotion": {
+                        "type": 0,
+                        "value": "Alegre"
+                    },
+                    "pos_x": {
+                        "type": 2,
+                        "value": -71.591949
+                    },
+                    "pos_y": {
+                        "type": 2,
+                        "value": 43.951389
+                    }
+                },
+                "id": "180367038282203145",
+                "links": [
+                ],
+                "name": "Emotion",
+                "type": "tts"
+            },
+            "180367038282207241": {
+                "attribute": {
+                    "Move": {
+                        "type": 0,
+                        "value": "Quieto"
+                    },
+                    "pos_x": {
+                        "type": 2,
+                        "value": -190.945068
+                    },
+                    "pos_y": {
+                        "type": 2,
+                        "value": 42.108471
+                    }
+                },
+                "id": "180367038282207241",
+                "links": [
+                ],
+                "name": "Move",
+                "type": "tts"
+            },
+            "180367044523327493": {
+                "attribute": {
+                    "pos_x": {
+                        "type": 2,
+                        "value": -321.968719
+                    },
+                    "pos_y": {
+                        "type": 2,
+                        "value": 38.447266
+                    },
+                    "to_say": {
+                        "type": 0,
+                        "value": "¡Hola mundo!"
+                    }
+                },
+                "id": "180367044523327493",
+                "links": [
+                ],
+                "name": "TTS",
+                "type": "tts"
+            },
+            "200": {
+                "attribute": {
+                    "base_target_x": {
+                        "type": 2,
+                        "value": 3600
+                    },
+                    "base_target_y": {
+                        "type": 2,
+                        "value": 1550
+                    },
+                    "color": {
+                        "type": 0,
+                        "value": "Blue"
+                    },
+                    "level": {
+                        "type": 1,
+                        "value": 1
+                    },
+                    "parent": {
+                        "type": 7,
+                        "value": "100"
+                    },
+                    "port": {
+                        "type": 1,
+                        "value": 12238
+                    },
+                    "pos_x": {
+                        "type": 2,
+                        "value": -170.025375
+                    },
+                    "pos_y": {
+                        "type": 2,
+                        "value": -93.068855
+                    },
+                    "robot_ref_adv_speed": {
+                        "type": 2,
+                        "value": 0
+                    },
+                    "robot_ref_rot_speed": {
+                        "type": 2,
+                        "value": 0
+                    },
+                    "robot_ref_side_speed": {
+                        "type": 2,
+                        "value": 0
+                    }
+                },
+                "id": "200",
+                "links": [
+                    {
+                        "dst": "180367038282203145",
+                        "label": "has",
+                        "linkAttribute": {
+                        },
+                        "src": "200"
+                    },
+                    {
+                        "dst": "180367038282207241",
+                        "label": "has",
+                        "linkAttribute": {
+                        },
+                        "src": "200"
+                    },
+                    {
+                        "dst": "180367044523327493",
+                        "label": "has",
+                        "linkAttribute": {
+                        },
+                        "src": "200"
+                    }
+                ],
+                "name": "EBO",
+                "type": "omnirobot"
+            }
+        }
+    }
+}

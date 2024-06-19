@@ -1,0 +1,9 @@
+Component asr_test
+{
+    Communications
+    {
+    };
+    language python;
+    options dsr;
+};
+
