@@ -319,7 +319,6 @@ class SpecificWorker(GenericWorker):
         time.sleep(1)
         self.differentialrobot_proxy.setSpeedBase(-vel, 0)
         time.sleep(0.5)
-        self.differentialrobot_proxy.setSpeedBase(0, 0)
         move_node.attrs["Move"] = Attribute("Quieto", self.agent_id)
         self.g.update_node(move_node)
 
@@ -339,13 +338,13 @@ class SpecificWorker(GenericWorker):
         time.sleep(4)
         self.differentialrobot_proxy.setSpeedBase(20, 0)
         time.sleep(2)
-        self.differentialrobot_proxy.setSpeedBase(0, 0)
         move_node.attrs["Move"] = Attribute("Quieto", self.agent_id)
         self.g.update_node(move_node)
 
     def mover_feliz(self):
         move_node = self.g.get_node("Move")
         vel = 160
+        time.sleep(1.3)
         self.differentialrobot_proxy.setSpeedBase(0, vel)
         time.sleep(3.7)
         self.differentialrobot_proxy.setSpeedBase(vel, 0)
@@ -360,6 +359,80 @@ class SpecificWorker(GenericWorker):
         time.sleep(1)
         move_node.attrs["Move"] = Attribute("Quieto", self.agent_id)
         self.g.update_node(move_node)
+
+    def mover_miedo(self):
+        move_node = self.g.get_node("Move")
+        vel = 160
+        time.sleep(1.3)
+        self.differentialrobot_proxy.setSpeedBase(-vel, 0)
+        time.sleep(1)
+        ###
+        i = 0
+        while i < 10:
+            self.differentialrobot_proxy.setSpeedBase(0, vel)
+            time.sleep(0.1)
+            self.differentialrobot_proxy.setSpeedBase(0, -vel)
+            time.sleep(0.1)
+            i = i+1
+        ###
+        self.differentialrobot_proxy.setSpeedBase(vel, 0)
+        time.sleep(1)
+        move_node.attrs["Move"] = Attribute("Quieto", self.agent_id)
+        self.g.update_node(move_node)
+
+    def mover_sorpresa(self):
+        move_node = self.g.get_node("Move")
+        vel = 160
+        time.sleep(1.3)
+
+        self.differentialrobot_proxy.setSpeedBase(vel, 0)
+        time.sleep(0.5)
+        self.differentialrobot_proxy.setSpeedBase(0, -vel)
+        time.sleep(0.5)
+        self.differentialrobot_proxy.setSpeedBase(0, 0)
+        time.sleep(1)
+        self.differentialrobot_proxy.setSpeedBase(0, vel)
+        time.sleep(1)
+        self.differentialrobot_proxy.setSpeedBase(0, 0)
+        time.sleep(1)
+        self.differentialrobot_proxy.setSpeedBase(0, -vel)
+        time.sleep(0.5)
+        self.differentialrobot_proxy.setSpeedBase(0, 0)
+        time.sleep(1)
+        self.differentialrobot_proxy.setSpeedBase(-vel, 0)
+        time.sleep(0.5)
+
+        move_node.attrs["Move"] = Attribute("Quieto", self.agent_id)
+        self.g.update_node(move_node)
+
+    def mover_asco(self):
+        move_node = self.g.get_node("Move")
+        vel = 30
+        time.sleep(1.3)
+        self.differentialrobot_proxy.setSpeedBase(-vel, 0)
+        time.sleep(1.2)
+        ###
+        i = 0
+        while i < 2:
+            self.differentialrobot_proxy.setSpeedBase(0, vel)
+            time.sleep(0.3)
+            self.differentialrobot_proxy.setSpeedBase(0, -vel)
+            time.sleep(0.3)
+            i = i+1
+        i = 0
+
+        while i < 8:
+            self.differentialrobot_proxy.setSpeedBase(0, 160)
+            time.sleep(0.1)
+            self.differentialrobot_proxy.setSpeedBase(0, -160)
+            time.sleep(0.1)
+            i = i+1
+        ###
+        self.differentialrobot_proxy.setSpeedBase(vel, 0)
+        time.sleep(1.2)
+        move_node.attrs["Move"] = Attribute("Quieto", self.agent_id)
+        self.g.update_node(move_node)
+
     def startup_check(self):
         print(f"Testing RoboCompDifferentialRobot.TMechParams from ifaces.RoboCompDifferentialRobot")
         test = ifaces.RoboCompDifferentialRobot.TMechParams()
@@ -377,6 +450,7 @@ class SpecificWorker(GenericWorker):
             self.mover_atras()
         elif move_node.attrs["Move"].value == "Quieto":
             self.estadoQuieto()
+
         # Movimientos de emociones
         elif move_node.attrs["Move"].value == "Enfado":
             self.mover_enfado()
@@ -384,6 +458,12 @@ class SpecificWorker(GenericWorker):
             self.mover_triste()
         elif move_node.attrs["Move"].value == "Feliz":
             self.mover_feliz()
+        elif move_node.attrs["Move"].value == "Miedo":
+            self.mover_miedo()
+        elif move_node.attrs["Move"].value == "Sorpresa":
+            self.mover_sorpresa()
+        elif move_node.attrs["Move"].value == "Asco":
+            self.mover_asco()
         else:
             self.estadoQuieto()
             pass

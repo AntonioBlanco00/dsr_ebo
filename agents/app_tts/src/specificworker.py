@@ -70,11 +70,11 @@ class SpecificWorker(GenericWorker):
 
         # Movimiento asociado a emociones
         self.ui.feliz.clicked.connect(lambda: self.move_clicked("Feliz"))
-        #self.ui.asco.clicked.connect(lambda: self.move_clicked("Asco"))
-        #self.ui.sorpresa.clicked.connect(lambda: self.move_clicked("Sorpresa"))
+        self.ui.asco.clicked.connect(lambda: self.move_clicked("Asco"))
+        self.ui.sorpresa.clicked.connect(lambda: self.move_clicked("Sorpresa"))
         self.ui.triste.clicked.connect(lambda: self.move_clicked("Triste"))
         self.ui.enfado.clicked.connect(lambda: self.move_clicked("Enfado"))
-        #self.ui.miedo.clicked.connect(lambda: self.move_clicked("Miedo"))
+        self.ui.miedo.clicked.connect(lambda: self.move_clicked("Miedo"))
 
         #Botones de movimiento
         self.ui.adelante.clicked.connect(lambda: self.move_clicked("Adelante"))
